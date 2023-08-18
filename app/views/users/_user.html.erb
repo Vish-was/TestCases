@@ -1,0 +1,25 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= user.name %>
+  </p>
+
+  <p>
+    <strong>Age:</strong>
+    <%= user.age %>
+  </p>
+
+  <p>
+    <strong>Kind:</strong>
+    <%= user.kind %>
+  </p>
+
+  <p id='favorite_teachers'>
+    <strong>Favorite Teachers:</strong>
+    <% if user.teachers.present? %>
+      <%= user.teachers.select { |teacher| teacher.id <= 2 }.map(&:name).join(', ') %>
+    <% else %>
+      No Favorite Teachers
+    <% end %>
+  </p>
+</div>

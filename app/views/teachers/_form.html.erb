@@ -1,0 +1,21 @@
+<%= form_with(model: teacher, url: edit_user_teacher_path(@user, @teacher)) do |form| %>
+    
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :age, style: "display: block" %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div>
+    <%= form.label :kind, style: "display: block" %>
+    <%= form.select :kind, Teacher.all.map { |key| key.kind } %>
+  </div>
+
+  <div>
+    <%#= form.submit %>
+  </div>
+<% end %>
